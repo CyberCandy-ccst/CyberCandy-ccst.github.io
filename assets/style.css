@@ -1,0 +1,502 @@
+:root {
+  --pink: #ff7eb3;
+  --blue: #5fd0e8;
+  --ink: #4a3b47;
+  --ink-soft: #8a7484;
+  --bg-card: #ffffff;
+  --radius: 20px;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  color: var(--ink);
+  font-family: "Segoe UI", "Hiragino Maru Gothic ProN", "Yu Gothic UI", "Meiryo", sans-serif;
+  line-height: 1.9;
+  /* パステルグラデ＋CSSだけの泡・キャンディ玉（deco画像なしでも成立する軽い装飾） */
+  background:
+    radial-gradient(circle at 8% 18%, rgba(255,126,179,.10) 0 52px, transparent 53px),
+    radial-gradient(circle at 92% 12%, rgba(95,208,232,.12) 0 70px, transparent 71px),
+    radial-gradient(circle at 15% 78%, rgba(180,139,224,.10) 0 46px, transparent 47px),
+    radial-gradient(circle at 85% 70%, rgba(255,126,179,.08) 0 90px, transparent 91px),
+    radial-gradient(circle at 55% 95%, rgba(95,208,232,.08) 0 40px, transparent 41px),
+    linear-gradient(160deg, #fff0f6 0%, #f6f3fc 55%, #e8f7fb 100%);
+  background-attachment: fixed;
+}
+.wrap { max-width: 720px; margin: 0 auto; padding: 0 18px 64px; }
+
+/* ヘッダー */
+header.site {
+  text-align: center;
+  padding: 42px 16px 10px;
+}
+header.site .logo {
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: .04em;
+  background: linear-gradient(90deg, var(--pink), #b48be0 55%, var(--blue));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-decoration: none;
+  display: inline-block;
+}
+header.site .logo-img { padding: 0; }
+header.site .logo-img img { height: 120px; width: auto; display: inline-block; vertical-align: middle; }
+header.site .catch { margin: 6px 0 0; color: var(--ink-soft); font-size: .95rem; }
+nav.menu { text-align: center; margin: 14px 0 26px; }
+nav.menu a {
+  display: inline-block;
+  margin: 0 6px;
+  padding: 7px 18px;
+  border-radius: 999px;
+  background: rgba(255,255,255,.75);
+  color: var(--ink);
+  text-decoration: none;
+  font-size: .9rem;
+  box-shadow: 0 2px 8px rgba(180,139,224,.18);
+}
+nav.menu a:hover { background: #fff; box-shadow: 0 4px 14px rgba(255,126,179,.3); }
+
+/* カード共通 */
+.card {
+  background: var(--bg-card);
+  border-radius: var(--radius);
+  padding: 26px 28px;
+  margin: 18px 0;
+  box-shadow: 0 6px 24px rgba(180,139,224,.14);
+}
+
+/* ヒーロー（index） */
+.hero { text-align: center; padding: 34px 24px; position: relative; overflow: hidden; }
+.hero h1 { margin: 0 0 8px; font-size: 1.5rem; }
+.hero .hero-title { max-width: 100%; height: auto; margin: 0 auto 10px; display: block; }
+.hero p { margin: 6px 0; position: relative; z-index: 1; }
+.hero .lead { color: var(--ink-soft); font-size: .95rem; }
+/* hero.png があるとき：背景は index_body 生成時に inline style で直書き（--hero経由だとURLの解決基準がstyle.css側になりズレるため） */
+
+/* トップの案内音声プレーヤー */
+.hero-audio { margin: 18px 0 6px; position: relative; z-index: 1; }
+.hero-audio-label { margin: 0 0 8px; font-size: .85rem; color: var(--ink-soft); }
+.hero-audio audio {
+  width: 100%;
+  max-width: 380px;
+  height: 42px;
+  border-radius: 999px;
+  box-shadow: 0 3px 12px rgba(180,139,224,.18);
+}
+
+/* ツーショット（about 冒頭・任意） */
+figure.duo { margin: 0 0 18px; text-align: center; }
+figure.duo img {
+  max-width: 100%; height: auto;
+  border-radius: var(--radius);
+  box-shadow: 0 8px 28px rgba(180,139,224,.2);
+}
+
+/* キャラカード */
+.chars { display: flex; gap: 16px; flex-wrap: wrap; }
+.chars .char {
+  flex: 1 1 240px;
+  background: var(--bg-card);
+  border-radius: var(--radius);
+  border-top: 6px solid var(--accent, var(--pink));
+  padding: 20px 22px;
+  box-shadow: 0 6px 24px rgba(180,139,224,.14);
+}
+.char .avatar {
+  width: 96px; height: 96px;
+  margin: 2px auto 10px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 4px solid var(--accent, var(--pink));
+  box-shadow: 0 4px 14px rgba(180,139,224,.25);
+  background: #fff;
+}
+.char .avatar img { width: 100%; height: 100%; object-fit: cover; object-position: top center; }
+.char { text-align: center; }
+.char h3 { margin: 4px 0 2px; font-size: 1.1rem; }
+.char .role {
+  display: inline-block;
+  font-size: .78rem;
+  color: #fff;
+  background: var(--accent, var(--pink));
+  border-radius: 999px;
+  padding: 2px 12px;
+  margin-bottom: 8px;
+}
+.char p { margin: 4px 0 0; font-size: .92rem; }
+
+/* 立ち絵バナー（about 冒頭） */
+.stand-row {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin: 6px 0 22px;
+}
+.stand {
+  margin: 0;
+  flex: 0 1 240px;
+  background: var(--bg-card);
+  border-radius: var(--radius);
+  border-bottom: 6px solid var(--accent, var(--pink));
+  padding: 12px 12px 0;
+  box-shadow: 0 6px 24px rgba(180,139,224,.14);
+  text-align: center;
+  overflow: hidden;
+}
+.stand img { width: 100%; max-width: 220px; height: auto; display: block; margin: 0 auto; }
+.stand figcaption {
+  padding: 8px 0 12px;
+  font-weight: 700;
+}
+.stand figcaption span {
+  display: block;
+  font-weight: 400;
+  font-size: .74rem;
+  color: var(--ink-soft);
+  letter-spacing: .03em;
+}
+
+/* 記事一覧 */
+.article-list a.item {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  background: var(--bg-card);
+  border-radius: var(--radius);
+  padding: 22px 26px;
+  margin: 14px 0;
+  box-shadow: 0 6px 24px rgba(180,139,224,.14);
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+.article-list a.item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 28px rgba(255,126,179,.28);
+}
+.item .meta { font-size: .8rem; color: var(--ink-soft); }
+.item h3 { margin: 4px 0 6px; font-size: 1.12rem; }
+.item p { margin: 0; font-size: .92rem; color: var(--ink-soft); }
+
+/* ニュースteaser(index)・アーカイブ用 */
+.article-list a.item.compact { padding: 14px 22px; }
+.article-list a.item.compact h3 { font-size: 1rem; margin-bottom: 0; }
+.article-list p.more { text-align: right; font-size: .92rem; margin: 8px 6px 0; }
+.news-head { text-align: center; position: relative; }
+.news-head h1 { margin: 0 0 6px; font-size: 1.35rem; }
+.news-head p { margin: 0; font-size: .92rem; color: var(--ink-soft); }
+.news-head::after {
+  content: "📰";
+  position: absolute;
+  top: -12px; right: 14px;
+  font-size: 1.6rem;
+  transform: rotate(14deg);
+  filter: drop-shadow(0 2px 4px rgba(180,139,224,.4));
+}
+
+/* セクション見出し（index/newsの一覧見出し）: キャンディ帯＋シール */
+.article-list h2 {
+  width: fit-content;
+  margin: 30px auto 16px;
+  padding: .35em 1.4em;
+  font-size: 1.12rem;
+  text-align: center;
+  background: linear-gradient(90deg, #ffe3ef, #e3f6fb);
+  border-radius: 999px;
+  box-shadow: 0 4px 14px rgba(180,139,224,.18);
+  position: relative;
+}
+.article-list h2::after {
+  content: "✨";
+  position: absolute;
+  top: -10px; right: -16px;
+  font-size: 1.1rem;
+  transform: rotate(16deg);
+}
+
+/* ヒーローのチップ列（二人の役割＋サイトの約束） */
+.hero .chips {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 12px;
+  position: relative;
+  z-index: 1;
+}
+
+/* キャラカード: 一言を吹き出しに */
+.char p.line {
+  position: relative;
+  background: var(--bubble, #fdf3f8);
+  border-radius: 12px;
+  padding: 10px 14px;
+  margin-top: 12px;
+  font-size: .92rem;
+  text-align: left;
+}
+.char p.line::before {
+  content: "";
+  position: absolute;
+  top: -8px; left: 50%;
+  transform: translateX(-50%);
+  border: 8px solid transparent;
+  border-bottom-color: var(--bubble, #fdf3f8);
+  border-top: 0;
+}
+.char .tagline {
+  display: block;
+  font-size: .72rem;
+  color: var(--ink-soft);
+  letter-spacing: .05em;
+  margin-top: 4px;
+}
+.char a.char-link {
+  display: inline-block;
+  margin-top: 10px;
+  font-size: .8rem;
+  color: var(--accent, #ff7eb3);
+  text-decoration: none;
+  border: 1.5px solid var(--accent, #ff7eb3);
+  border-radius: 999px;
+  padding: 3px 14px;
+  transition: background .15s;
+}
+.char a.char-link:hover { background: var(--bubble, #fdf3f8); }
+
+footer.site::before {
+  content: "🍬 ⋆ ✦ ⋆ 🍬";
+  display: block;
+  letter-spacing: .5em;
+  margin-bottom: 8px;
+  opacity: .7;
+}
+.badge {
+  display: inline-block;
+  font-size: .74rem;
+  background: linear-gradient(90deg, #ffe3ef, #e3f6fb);
+  border-radius: 999px;
+  padding: 2px 12px;
+  margin-right: 8px;
+}
+
+/* 推しツール図鑑（tools.html・2026-07-19） */
+.tools { display: flex; flex-wrap: wrap; gap: 16px; }
+.tool {
+  flex: 1 1 240px;
+  background: var(--bg-card);
+  border-radius: var(--radius);
+  border-top: 6px solid var(--pink);
+  padding: 22px 24px;
+  box-shadow: 0 6px 24px rgba(180,139,224,.14);
+  text-align: center;
+}
+.tool .t-icon {
+  display: block;
+  font-size: 2.6rem;
+  line-height: 1.2;
+  filter: drop-shadow(0 3px 6px rgba(180,139,224,.35));
+}
+.tool h3 { margin: 6px 0 4px; font-size: 1.15rem; }
+.tool .t-catch { margin: 2px 0 8px; font-size: .9rem; color: var(--ink-soft); }
+.tool p.line {
+  background: #fdf3f8;
+  border-radius: 12px;
+  padding: 10px 14px;
+  margin: 10px 0 0;
+  font-size: .9rem;
+  text-align: left;
+}
+.tool a.t-link {
+  display: inline-block;
+  margin-top: 12px;
+  font-size: .8rem;
+  color: var(--pink);
+  text-decoration: none;
+  border: 1.5px solid var(--pink);
+  border-radius: 999px;
+  padding: 3px 14px;
+  transition: background .15s;
+}
+.tool a.t-link:hover { background: #fdf3f8; }
+.tool.coming {
+  border-top-color: #e8dcf5;
+  color: var(--ink-soft);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.tools-head { text-align: center; position: relative; }
+.tools-head h1 { margin: 0 0 6px; font-size: 1.35rem; }
+.tools-head p { margin: 0; font-size: .92rem; color: var(--ink-soft); }
+.tools-head::after {
+  content: "🍬";
+  position: absolute;
+  top: -12px; right: 14px;
+  font-size: 1.6rem;
+  transform: rotate(14deg);
+  filter: drop-shadow(0 2px 4px rgba(180,139,224,.4));
+}
+
+/* 難易度ラベル（frontmatter level: かんたん/ふつう/じっくり・2026-07-19） */
+.lv {
+  display: inline-block;
+  font-size: .74rem;
+  font-weight: 700;
+  border-radius: 999px;
+  padding: 2px 12px;
+  margin-right: 8px;
+}
+.lv.easy { background: #ffe3ef; color: #993556; }
+.lv.mid  { background: #f0e8fb; color: #6b4d99; }
+.lv.deep { background: #e3f6fb; color: #1d7a96; }
+.lv-legend {
+  text-align: center;
+  font-size: .78rem;
+  color: var(--ink-soft);
+  margin: -4px 0 12px;
+}
+.lv-legend .lv { font-size: .7rem; padding: 1px 10px; margin: 0 2px; }
+
+/* 記事本文 */
+article.post h1 { font-size: 1.45rem; line-height: 1.5; }
+article.post h2 {
+  font-size: 1.15rem;
+  margin-top: 2.2em;
+  padding: .35em .9em;
+  background: linear-gradient(90deg, #ffe3ef, #e3f6fb);
+  border-radius: 12px;
+}
+article.post h3 { font-size: 1.05rem; margin-top: 1.8em; }
+article.post blockquote {
+  margin: 1.2em 0;
+  padding: .8em 1.2em;
+  background: #fdf3f8;
+  border-left: 5px solid var(--pink);
+  border-radius: 0 12px 12px 0;
+}
+article.post blockquote p { margin: 0; }
+article.post hr { border: none; border-top: 2px dashed #f0d9e6; margin: 2.2em 0; }
+article.post img { max-width: 100%; border-radius: 12px; }
+
+/* 文章装飾（記事本文＋サイト地の文で共用・使いすぎ注意） */
+mark {
+  background: #ffe3ef;
+  color: var(--ink);
+  padding: 1px 4px;
+  border-radius: 4px;
+  font-weight: 700;
+}
+mark.blue { background: #e3f6fb; }
+.cc-uline {
+  color: #2e8fac;
+  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-style: wavy;
+  text-decoration-color: #a8d9e8;
+  text-underline-offset: 3px;
+}
+.cc-pop {
+  font-size: 1.25em;
+  font-weight: 700;
+  color: #d4537e;
+}
+.cc-chip {
+  display: inline-block;
+  background: #ffe3ef;
+  color: #993556;
+  font-size: .78em;
+  font-weight: 700;
+  padding: 2px 10px;
+  border-radius: 999px;
+  margin: 0 2px;
+}
+.cc-chip.blue { background: #e3f6fb; color: #1d7a96; }
+/* グラデ文字（サイト名などの見せ場用） */
+.cc-grad {
+  font-weight: 800;
+  background: linear-gradient(90deg, var(--pink), #b48be0 55%, var(--blue));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* 読みかたモード切替（記事内ワンボタンで かんたん↔くわしく・2026-07-19） */
+.cc-mode {
+  position: sticky;
+  top: 10px;
+  z-index: 5;
+  width: fit-content;
+  margin: 4px 0 16px auto;
+  background: #fff;
+  border-radius: 999px;
+  padding: 4px;
+  box-shadow: 0 4px 14px rgba(180,139,224,.28);
+  display: flex;
+  gap: 4px;
+}
+.cc-mode button {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font: inherit;
+  font-size: .82rem;
+  font-weight: 700;
+  color: var(--ink-soft);
+  border-radius: 999px;
+  padding: 4px 14px;
+  transition: background .15s, color .15s;
+}
+.cc-mode button.easy.on { background: var(--pink); color: #fff; }
+.cc-mode button.deep.on { background: var(--blue); color: #fff; }
+.cc-layer::before {
+  display: inline-block;
+  font-size: .72rem;
+  font-weight: 700;
+  border-radius: 999px;
+  padding: 1px 10px;
+  margin: 4px 0 2px;
+}
+.cc-layer.easy::before { content: "🍭 かんたん解説"; background: #ffe3ef; color: #993556; }
+.cc-layer.deep::before { content: "🫐 くわしい解説"; background: #e3f6fb; color: #1d7a96; }
+/* モードのクラスはJSが付ける。JSが無い環境では両方見える（安全側） */
+article.post.mode-easy .cc-layer.deep { display: none; }
+article.post.mode-deep .cc-layer.easy { display: none; }
+
+/* 記事写真：キャンディ調フレーム＋シール風デコ（ルムの希望） */
+figure.photo {
+  margin: 1.6em auto;
+  padding: 10px 10px 6px;
+  max-width: 560px;
+  text-align: center;
+  position: relative;
+  background: linear-gradient(135deg, #ffe3ef, #e3f6fb);
+  border-radius: 18px;
+  box-shadow: 0 6px 24px rgba(180,139,224,.2);
+}
+figure.photo img { display: block; width: 100%; border-radius: 12px; }
+figure.photo::after {
+  content: "🍬";
+  position: absolute;
+  top: -12px; right: -6px;
+  font-size: 1.5rem;
+  transform: rotate(18deg);
+  filter: drop-shadow(0 2px 4px rgba(180,139,224,.4));
+}
+figure.photo figcaption {
+  font-size: .84rem;
+  color: var(--ink-soft);
+  padding: 6px 4px 4px;
+}
+.post-meta { font-size: .82rem; color: var(--ink-soft); margin-bottom: 4px; }
+
+footer.site {
+  text-align: center;
+  color: var(--ink-soft);
+  font-size: .8rem;
+  padding: 30px 0 10px;
+}
+@media (max-width: 480px) {
+  header.site .logo { font-size: 1.6rem; }
+  .card, .article-list a.item { padding: 20px 18px; }
+}
