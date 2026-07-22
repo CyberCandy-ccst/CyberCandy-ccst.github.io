@@ -490,6 +490,33 @@ figure.photo figcaption {
 }
 .post-meta { font-size: .82rem; color: var(--ink-soft); margin-bottom: 4px; }
 
+/* ニュース記事の日送りナビ（前の日↔次の日・2026-07-23） */
+.news-nav {
+  display: flex;
+  gap: 8px;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 20px 0 6px;
+}
+.news-nav .nn {
+  border-radius: 999px;
+  padding: 7px 16px;
+  font-size: .86rem;
+  text-decoration: none;
+}
+.news-nav a.nn {
+  background: rgba(255,255,255,.85);
+  color: var(--ink);
+  box-shadow: 0 2px 8px rgba(180,139,224,.18);
+  transition: box-shadow .15s ease, background .15s ease;
+}
+.news-nav a.nn:hover { background: #fff; box-shadow: 0 4px 14px rgba(255,126,179,.3); }
+.news-nav span.nn.off { background: rgba(255,255,255,.45); color: var(--ink-soft); }
+@media (max-width: 480px) {
+  .news-nav { justify-content: center; }
+}
+
 footer.site {
   text-align: center;
   color: var(--ink-soft);
