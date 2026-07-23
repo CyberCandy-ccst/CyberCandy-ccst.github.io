@@ -490,6 +490,21 @@ figure.photo figcaption {
 }
 .post-meta { font-size: .82rem; color: var(--ink-soft); margin-bottom: 4px; }
 
+/* 出典URLのワンクリックリンク（素のURLをビルド時に変換・2026-07-23） */
+a.src-link {
+  display: inline-block;
+  font-size: .8rem;
+  font-weight: 700;
+  color: #1d7a96;
+  background: #e3f6fb;
+  border-radius: 999px;
+  padding: 1px 12px;
+  margin: 0 2px;
+  text-decoration: none;
+  white-space: nowrap;
+}
+a.src-link:hover { background: #d3f0f9; box-shadow: 0 2px 8px rgba(95,208,232,.35); }
+
 /* ニュース記事の日送りナビ（前の日↔次の日・2026-07-23） */
 .news-nav {
   display: flex;
