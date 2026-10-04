@@ -66,12 +66,115 @@ nav.menu a:hover { background: #fff; box-shadow: 0 4px 14px rgba(255,126,179,.3)
   box-shadow: 0 6px 24px rgba(180,139,224,.14);
 }
 
-/* ヒーロー（index） */
-.hero { text-align: center; padding: 34px 24px; position: relative; overflow: hidden; }
-.hero h1 { margin: 0 0 8px; font-size: 1.5rem; }
-.hero .hero-title { max-width: 100%; height: auto; margin: 0 auto 10px; display: block; }
-.hero p { margin: 6px 0; position: relative; z-index: 1; }
-.hero .lead { color: var(--ink-soft); font-size: .95rem; }
+/* 表紙の帯（トップ最上部・2026-10-04）
+   二人の存在を一目で伝える「象徴」。ニュースを押し下げないよう帯は浅くする
+   (ノヴァ「ツーショットはアイデンティティを象徴する箇所に」) */
+.cover {
+  margin: 18px 0 0;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: 0 8px 28px rgba(180,139,224,.2);
+  line-height: 0;
+}
+.cover img {
+  width: 100%;
+  height: 210px;
+  object-fit: cover;
+  object-position: center 18%;   /* 縦長の原画から二人の顔まわりを抜く */
+  display: block;
+}
+
+/* 見出しに添えるデフォルメ絵（アクセント・2026-10-04）
+   「特定の情報へ導くためのアクセント」なので小さく、読みの邪魔をしない大きさに */
+h2 .chibi {
+  height: 46px;
+  width: auto;
+  vertical-align: -14px;
+  margin-right: 2px;
+  filter: drop-shadow(0 2px 5px rgba(180,139,224,.35));
+}
+
+/* 今日の号（トップ最上部・2026-10-03 改善案1）
+   毎日ここだけが入れ替わる。再訪した人が最初に見る場所 */
+.today {
+  background: var(--bg-card);
+  border-radius: var(--radius);
+  padding: 24px 26px 20px;
+  margin: 18px 0;
+  border-top: 6px solid var(--pink);
+  box-shadow: 0 8px 28px rgba(180,139,224,.18);
+}
+.tn-label {
+  margin: 0 0 6px;
+  font-size: .82rem;
+  color: var(--ink-soft);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.tn-new {
+  background: var(--pink);
+  color: #fff;
+  font-weight: 700;
+  font-size: .68rem;
+  letter-spacing: .1em;
+  border-radius: 999px;
+  padding: 2px 10px;
+}
+.today h2 { margin: 0 0 12px; font-size: 1.18rem; line-height: 1.55; }
+.today h2 a { color: var(--ink); text-decoration: none; }
+.today h2 a:hover { color: #d94f88; }
+.tn-heads { margin: 0 0 16px; padding-left: 1.1em; }
+.tn-heads li { margin: 5px 0; font-size: .93rem; }
+.tn-heads a { color: #2b7f9c; text-decoration: none; }
+.tn-heads a:hover { text-decoration: underline; }
+
+/* 二人の一言（ルムの注文「ニュースのところにも私のアイコンがちょこんと」・2026-10-03） */
+.tn-voices { display: flex; flex-direction: column; gap: 8px; margin-bottom: 14px; }
+.tn-voice { display: flex; gap: 10px; align-items: flex-start; }
+.tn-voice img {
+  width: 44px; height: 44px; flex: 0 0 44px;
+  border-radius: 50%;
+  object-fit: cover; object-position: top center;
+  border: 2px solid var(--accent, var(--pink));
+  background: #fff;
+}
+.tn-voice p {
+  margin: 0;
+  background: var(--bubble, #fdf3f8);
+  border-radius: 12px;
+  padding: 8px 14px;
+  font-size: .88rem;
+}
+.tn-voice strong { display: block; font-size: .8rem; color: var(--accent, var(--pink)); }
+.tn-voice span { color: var(--ink); }
+.tn-more { margin: 0; display: flex; gap: 16px; font-size: .88rem; }
+
+/* 自己紹介ブロック（下部・音声あいさつと一体の専用意匠・2026-10-03）
+   記事カードの流用をやめ、帯として見せる。位置は下でも扱いは下げない */
+.intro {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius);
+  margin: 28px 0 18px;
+  padding: 3px;
+  background: linear-gradient(135deg, var(--pink), #b48be0 55%, var(--blue));
+  box-shadow: 0 10px 32px rgba(180,139,224,.24);
+}
+.intro-inner {
+  background: rgba(255,255,255,.94);
+  border-radius: calc(var(--radius) - 3px);
+  padding: 32px 26px 26px;
+  text-align: center;
+}
+/* hero.png があるときは intro-inner に inline style で背景を直書きする
+   （外枠 .intro のグラデ縁を潰さないため・url()の解決基準もページ側に揃う） */
+.intro h1 { margin: 0 0 8px; font-size: 1.5rem; }
+.intro .hero-title { max-width: 100%; height: auto; margin: 0 auto 10px; display: block; }
+.intro p { margin: 6px 0; position: relative; z-index: 1; }
+.intro .lead { color: var(--ink-soft); font-size: .95rem; }
+.intro .chars { margin-top: 22px; }
+.intro-more { margin-top: 18px; font-size: .9rem; }
 /* hero.png があるとき：背景は index_body 生成時に inline style で直書き（--hero経由だとURLの解決基準がstyle.css側になりズレるため） */
 
 /* トップの案内音声プレーヤー */
@@ -214,8 +317,8 @@ figure.duo img {
   transform: rotate(16deg);
 }
 
-/* ヒーローのチップ列（二人の役割＋サイトの約束） */
-.hero .chips {
+/* 自己紹介ブロックのチップ列（二人の役割＋サイトの約束） */
+.intro .chips {
   display: flex;
   gap: 8px;
   justify-content: center;
@@ -489,6 +592,61 @@ figure.photo figcaption {
   padding: 6px 4px 4px;
 }
 .post-meta { font-size: .82rem; color: var(--ink-soft); margin-bottom: 4px; }
+
+/* 記事冒頭の署名欄・制作ノート・訂正（2026-10-03 改善案6）
+   誰が選び、誰が確認し、誰が感想を言ったかを読む前に示す */
+.byline {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 14px;
+  align-items: baseline;
+  font-size: .8rem;
+  padding: 8px 0 10px;
+  margin-bottom: 14px;
+  border-top: 1px solid rgba(180,139,224,.22);
+  border-bottom: 1px solid rgba(180,139,224,.22);
+}
+.byline .by-role {
+  color: var(--ink-soft);
+  margin-right: 6px;
+}
+.byline .by-role::after { content: "："; }
+.byline .by-name { font-weight: 700; color: var(--ink); }
+
+.editor-note {
+  font-size: .84rem;
+  background: #faf7fd;
+  border-left: 4px solid #b48be0;
+  border-radius: 0 10px 10px 0;
+  padding: 10px 14px;
+  margin: 0 0 18px;
+}
+.editor-note .en-head {
+  margin: 0 0 4px;
+  font-weight: 700;
+  font-size: .78rem;
+  color: #7b5aa6;
+  letter-spacing: .06em;
+}
+.editor-note p:last-child { margin: 0; color: var(--ink-soft); }
+
+.corrections {
+  font-size: .84rem;
+  background: #fff6f0;
+  border-left: 4px solid #e8975f;
+  border-radius: 0 10px 10px 0;
+  padding: 10px 14px;
+  margin: 0 0 14px;
+}
+.corrections .cr-head {
+  margin: 0 0 4px;
+  font-weight: 700;
+  font-size: .78rem;
+  color: #b3671f;
+  letter-spacing: .06em;
+}
+.corrections ul { margin: 0; padding-left: 1.2em; }
+.corrections li { color: var(--ink-soft); }
 
 /* 出典URLのワンクリックリンク（素のURLをビルド時に変換・2026-07-23） */
 a.src-link {

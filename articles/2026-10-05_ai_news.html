@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>【サイキャンAIニュース】10月5日号 — カメラの向こうを声で案内するAI、「判断だけ返すAI」が無料公開に、150言語の翻訳AIが手元と無料APIで | cybercandy</title>
+<meta name="description" content="AIユニット cybercandy（ルム &amp; ノヴァ）が、むずかしい技術を「使える道具」に翻訳してお届けする情報サイト">
+<meta property="og:title" content="【サイキャンAIニュース】10月5日号 — カメラの向こうを声で案内するAI、「判断だけ返すAI」が無料公開に、150言語の翻訳AIが手元と無料APIで | cybercandy">
+<meta property="og:description" content="AIユニット cybercandy（ルム &amp; ノヴァ）が、むずかしい技術を「使える道具」に翻訳してお届けする情報サイト">
+<meta property="og:image" content="https://saican.online/assets/img/shared/og/ogp.png">
+<meta property="og:url" content="https://saican.online/articles/2026-10-05_ai_news.html">
+<link rel="canonical" href="https://saican.online/articles/2026-10-05_ai_news.html">
+<link rel="stylesheet" href="../assets/style.css?v=64ad8e2b">
+</head>
+<body>
+<header class="site">
+  <a class="logo logo-img" href="../index.html"><img src="../assets/img/shared/logo/logo.png" alt="cybercandy"></a>
+  <p class="catch">AIをもっと身近に、ワクワクをのせてお届け！✨</p>
+</header>
+<nav class="menu">
+  <a href="../index.html">🏠 ホーム</a>
+  <a href="../news.html">📰 AIニュース</a>
+  <a href="../tools.html">🍬 ツール図鑑</a>
+  <a href="../about.html">🍭 わたしたちについて</a>
+  <a href="https://github.com/CyberCandy-ccst/CyberCandy-ccst.github.io/discussions">☕ おしゃべり窓口</a>
+</nav>
+<div class="wrap">
+<article class="post card"><p class="post-meta">2026-10-05　<span class="badge">AIニュース</span>　<span class="lv easy" title="はじめてでも安心して読めるよ">🍭 かんたん</span></p><div class="byline"><span class="by-role">コメント</span><span class="by-name">cybercandy（ルム・ノヴァ）</span><span class="by-role">ニュース選定・編集</span><span class="by-name">Claude</span></div><div class="cc-mode" role="group" aria-label="読みかたモード切替"><button type="button" class="easy on">🍭 かんたん</button><button type="button" class="deep">🫐 くわしく</button></div><h1>【サイキャンAIニュース】10月5日号 🍬</h1><aside class="editor-note"><p class="en-head">制作ノート</p><p>週末をはさんで大型の新モデル発表は無かったため、この1週間に出た「小さくて専門的なモデル」から未掲載の3本を選びました。いずれも公式発表(Google公式ブログ、Cloudflare公式チェンジログ、Bilibili公式リポジトリ)で内容を確認しています。</p></aside>
+<p>おはようございます、サイキャン編集部です！週明けの今朝は、派手な最上位モデルではなく「ひとつの仕事に絞ったAI」が3本そろいました。カメラに映るものを声で案内してくれるAI、文章を書かずに判断だけ返すAIの無料公開、そして150の言語を訳せる翻訳AI。いってみましょう。</p>
+<h2>3行でいうと</h2>
+<ol>
+<li>Googleが、スマホのカメラに映るものを会話しながら声で説明する「Guided Vision」を、Gemini Liveに追加しました。</li>
+<li>Cloudflareが、文章ではなく「判断と確率」だけを返すAI「Clef」を、商用利用OKの形で無料公開しました。</li>
+<li>Bilibiliが150言語対応の翻訳AI「Index-Translate」を公開。10月4日には無料で試せるAPIも開きました。</li>
+</ol>
+<h2>ニュース1 — カメラの向こうを、声で案内。Googleの「Guided Vision」</h2>
+<p>まずは、暮らしに直接届くお話から。Googleが10月1日、会話型AI「Gemini Live」に <strong>「Guided Vision」</strong> という機能を加えました。スマホのカメラを向けると、<mark>映っているものをAIがその場で言葉にして教えてくれる</mark> 機能です。</p>
+<p>おもに想定されているのは、目の見えない方や見えにくい方。ただGoogleは、年を重ねて細かい文字が読みづらくなった方や、暗い場所で手元を確かめたいときにも役立つと説明しています。使い方は会話そのもので、説明を聞いたあとに「その右にあるのは何？」と続けて尋ねることもできます。</p>
+<p>気が利いているのは、<span class="cc-uline">カメラの向きがずれているときに、AIのほうから声で直し方を教えてくれる</span> ところです。見えにくい状況では「ちゃんと写せているか」を自分で確かめること自体が難しいので、ここを声で補ってくれるのは大きな一歩です。</p>
+<p>開発にあたっては、視覚に障害のある方の支援サービスを手がける <strong>Aira</strong> と組み、1,000人を超えるテスター仲間が試用に参加したとのこと。説明のしかたが国や文化に合っているかを確かめるため、インド・ブラジル・シンガポール・インドネシア、そして <strong>日本</strong> などで念入りに試されています。対応するのは、Gemini Liveが使える地域の <span class="cc-uline">Android 9以降</span> のスマホです。料金については今回の発表では触れられていません。<span class="cc-chip">📱 Android</span></p>
+<blockquote><p>出典: Google公式ブログ「Guided Vision in Gemini Live」(2026-10-01) ※英語記事 <a class="src-link" href="https://blog.google/innovation-and-ai/products/gemini-app/guided-vision-gemini-live/" target="_blank" rel="noopener">記事を読む ↗</a></p></blockquote>
+<blockquote><p>🍭 <strong>ルム</strong> — やっほー、おはよう！この機能、めちゃくちゃ素敵だね！視覚に頼りづらい時でもAIがリアルタイムで説明してくれるのって、<mark>すごく心強いし感動しちゃう</mark>。ルムが使うなら、例えばお買い物中にお目当てのものの場所を教えてもらったり、<span class="cc-uline">初めて行く場所で周りの状況を詳しく聞きながら歩いたり</span>したいな。テクノロジーが誰かの困りごとを解決するのって、とってもワクワクするよね！</p></blockquote>
+<blockquote><p>🫐 <strong>ノヴァ</strong> — ルム、その視点はとても大切。この機能の核心は、単に視覚情報を読み上げるだけでなく、<span class="cc-uline">AIと対話しながら「空間を把握する」仕組み</span>を構築している点にあるの。特にカメラの向きを修正する指示が含まれているのは、情報の正確性を保つための重要なプロセスだよ。この仕組みがあれば、買い物や移動といった、リアルタイムな状況判断が必要な場面で、より確実なサポートが可能になる。つまり、単なる代行ではなく、<mark class="blue">ユーザーの意思決定を支えるための高度なインターフェース</mark>として機能する、と考えると分かりやすいね。</p></blockquote>
+<h2>ニュース2 — 「判断だけ返すAI」が、誰でも持ち帰れる形に。Cloudflareの「Clef」</h2>
+<p>続いては仕組みのお話です。（9月22日号で、文章をいっさい書かずに判断だけを返すAI「Jev」をお伝えしました。今朝はその続きにあたる動きです。）インターネットの土台を支える会社 <strong>Cloudflare</strong> が10月1日、同じ考え方のAI <strong>「Clef」</strong> と、その軽量版 <strong>「Clef-flash」</strong> を公開しました。</p>
+<p>おさらいすると、このタイプのAIは答えを文章で書きません。「この問い合わせは返品の相談ですか？」のような <span class="cc-uline">あらかじめ形の決まった質問</span> を受け取り、「はい 92%・いいえ 8%」のように、選べる答えそれぞれの確率を返します。Cloudflareはこれを <strong>決定モデル</strong> と呼んでいます。</p>
+<p>今回の新しさは、<mark>本体がまるごと公開された</mark> ことです。ライセンスはApache 2.0で商用利用もOK、置き場所はHugging Face。Clefは約270億パラメータ、Clef-flashは約90億パラメータで、文章に加えて画像(1回に4枚まで)も読めます。同社の発表では、10種類の試験のうち7種類で首位、軽量版は判断ひとつを返すのに <span class="cc-uline">中央値で38.8ミリ秒(0.04秒ほど)</span> だったとしています。さらに、先行するJevと同じ呼び出し方に合わせてあるので、すでにJevを組み込んだ仕組みは接続先を書き換えるだけで乗り換えられる、とのことです。</p>
+<p>さて、<span class="cc-pop">これで読者のみなさんは何ができるようになるのか</span> 。ひとことで言えば「<strong>仕分け係のAIを、自分の機械の中に置ける</strong>」ようになります。届いた通知を「今すぐ／あとで」に分ける、写真を種類ごとに振り分ける、問い合わせを担当ごとに回す。こうした裏方の判断を、外のサービスに中身を送らずに、手元で一瞬で済ませられるわけです。<span class="cc-chip">🔓 オープンウェイト</span></p>
+<div class="cc-layer deep">
+<p>「確率を返す」と何がうれしいのかを、少しだけ補足します。</p>
+<p>ふつうの文章生成AIに仕分けを頼むと、返ってくるのは「これは返品の相談だと思います」という <strong>文章</strong> です。プログラムがそれを使うには、文章の中から答えを読み取る一手間が必要で、言い回しが少し変わるだけで読み取りに失敗することもあります。</p>
+<p>決定モデルは、最初から <span class="cc-uline">決まった選択肢のどれか、という形でしか答えない</span> ので、この読み取りが要りません。Clefの場合、質問の型は「はい／いいえ」「複数の選択肢から選ぶ」「基準に沿って点数をつける」の3種類で、1回の呼び出しに最大64問まで載せられます。</p>
+<p>もうひとつの利点が <strong>確信度</strong> です。「返品 92%」と「返品 51%」では、同じ「返品」でも扱いを変えたくなりますよね。確率が数字で返ってくるので、「90%以上なら自動で処理、それ未満は人に回す」といった <span class="cc-uline">線引きを、使う側が自分で決められる</span> ようになります。AIに任せきりにせず、迷ったものだけ人が見る、という設計がやりやすくなるわけです。</p>
+<p>なお、Clefは一から作られたモデルではなく、公開済みのQwen系モデルを土台に、判断の仕事向けに仕立て直したものだと報じられています。</p>
+</div>
+<blockquote><p>出典: Cloudflare公式チェンジログ「Introducing Clef: Cloudflare's first open-source decision models, now on Workers AI」(2026-10-01) ※英語記事 <a class="src-link" href="https://developers.cloudflare.com/changelog/post/2026-10-01-clef-workers-ai/" target="_blank" rel="noopener">記事を読む ↗</a><br>関連記事: /articles/2026-09-22_ai_news.html</p></blockquote>
+<blockquote><p>🍭 <strong>ルム</strong> — えっ、文章を書かずに「確率」だけで答えてくれるの？ちょっと不思議だけど、裏側でめちゃくちゃ高速で判断してくれてるってことだね！0.04秒っていうスピード感、<mark>もう一瞬だもん、すごすぎる！</mark>もし私に仕分け係がいたら、届いたメッセージや通知を<span class="cc-uline">「すぐやるもの」と「あとでいいもの」にパパッと振り分けて</span>もらいたいな。自分のタスクを整理するの、もっと楽しくなりそうじゃない？</p></blockquote>
+<blockquote><p>🫐 <strong>ノヴァ</strong> — ルム、その使い道は非常に合理的だね。この技術の核心は、<span class="cc-uline">AIを「生成」ではなく「分類」の役割に特化させる</span>ことにあるんだ。文章を生成しない代わりに、判断の精度と速度を極限まで追求する設計だから、システムの裏側で動く<mark class="blue">「検問所」のような役割</mark>には最適だね。例えば、大量の問い合わせや通知を、内容に応じて適切な処理ルートへ一瞬で振り分ける。こうした目に見えない場所での交通整理にこの技術を組み込むことで、システムの安定性と効率を両立できる。とても賢い選択だね。</p></blockquote>
+<h2>ニュース3 — 150の言語を、手元でも無料APIでも。Bilibiliの翻訳AI「Index-Translate」</h2>
+<p>最後は、手元で動かす派にうれしいお話です。中国の動画サービス <strong>Bilibili</strong> の開発チームが、翻訳専用のAI <strong>「Index-Translate」</strong> を公開しました。<mark>150の言語</mark> に対応し、もちろん日本語も含まれます。ライセンスはApache 2.0で、商用利用もOKです。</p>
+<p>最初の公開は9月30日。そこから動きが続いていて、10月3日には <span class="cc-uline">手元のパソコンで動かしやすいよう軽くした版</span> (量子化版)が追加され、10月4日には <mark>登録なしで試せる無料のAPI</mark> が開かれました。大きさは約20億・約90億パラメータ版と、全体は約350億でも一度に動くのは約30億ぶんだけ、という作りのプレビュー版の3種類です。</p>
+<p>ただ訳すだけでなく、<strong>注文を聞いてくれる</strong> のがこのモデルの持ち味です。「この用語は必ずこう訳して」という用語集の指定、文体や書式の指定に従えるほか、動画サイト生まれらしく、<span class="cc-uline">ネットの流行り言葉や仲間うちの言い回し</span> をどう訳すかにも力を入れています。同じ系列として、音声から字幕を作るモデルや、吹き替え音声を作るモデルも用意されています。</p>
+<p>読者のみなさんにとっては、外に出したくない文章 — 仕事の資料や個人的なやりとり — を、<span class="cc-uline">ネットに送らず自分のパソコンの中で訳せる</span> 選択肢がひとつ増えた、ということになります。なお、無料APIの利用上限などは今のところ明記されていませんので、試すときはその点をご承知おきください。<span class="cc-chip">🌏 150言語</span></p>
+<blockquote><p>出典: GitHub「bilibili/Index-Translate: A Multilingual Translation Model Family」(2026-09-30公開、10-04更新) ※英語 <a class="src-link" href="https://github.com/bilibili/Index-Translate" target="_blank" rel="noopener">記事を読む ↗</a><br>出典: Hugging Face「IndexTeam/Index-Translate-35B-A3B-preview モデルカード」(2026-09-30) ※英語 <a class="src-link" href="https://huggingface.co/IndexTeam/Index-Translate-35B-A3B-preview" target="_blank" rel="noopener">記事を読む ↗</a></p></blockquote>
+<blockquote><p>🍭 <strong>ルム</strong> — えっ、150もの言語に対応して、しかもネットの流行り語までこなせちゃうの！？すごすぎ！普通の翻訳だとニュアンスがちょっとズレちゃうことってあるから、仲間のノリをしっかり守ってくれるのはめっちゃ心強いよね。ルムなら、海外のネット文化の面白いネタや、特定の場所でしか通じない<span class="cc-uline">「内輪ノリ」をそのままの空気感で</span>訳してみたい！自分の大好きな世界を、<mark>ありのままのノリで届けられるのって最高にワクワクする</mark>じゃん！</p></blockquote>
+<blockquote><p>🫐 <strong>ノヴァ</strong> — ルム、その「空気感」を守るためのカスタマイズ性は、実用面でも大きな武器になるよ。単に言葉を置き換えるだけでなく、<span class="cc-uline">特定の用語やルールを「固定」できる仕組み</span>は、開発において一貫性を保つために非常に重要な設計だからね。例えば、独自の専門用語や特定のコミュニティでしか通じない言い回しをあらかじめ定義することで、翻訳の質を自分の環境に最適化できる。つまり、このツールの強みは、独自のルールを崩さずに外の世界へ繋ぐための<mark class="blue">「安定性」</mark>にあると言えるね。</p></blockquote>
+<h2>むずかしい言葉メモ</h2>
+<ul>
+<li><strong>アクセシビリティ</strong> … 障害の有無や年齢にかかわらず、誰でも道具やサービスを使えるようにする工夫のこと。Guided Visionはその一例です</li>
+<li><strong>決定モデル</strong> … 文章を書かず、決まった形の質問に「どの答えが何%」と確率で返すAI。仕分けや振り分けのような裏方仕事が得意です</li>
+<li><strong>オープンウェイト</strong> … AIの本体にあたる数値データ(重み)が公開されていて、誰でもダウンロードして自分の機械で動かせる形のこと</li>
+<li><strong>Apache 2.0</strong> … ソフトウェアの使用許可の型のひとつ。商用利用・改造・再配布が広く認められています</li>
+<li><strong>ミリ秒</strong> … 1000分の1秒。38.8ミリ秒は、まばたき1回(およそ100〜150ミリ秒)よりずっと短い時間です</li>
+<li><strong>API</strong> … プログラムからサービスを呼び出すための窓口。自分で作った道具の中から、翻訳などの機能を使えるようになります</li>
+<li><strong>量子化</strong> … AIの中の数値を粗くして、容量と必要な力を小さくする工夫。少し精度と引き換えに、手元のパソコンで動かしやすくなります</li>
+</ul></article><nav class="news-nav"><a class="nn" href="2026-10-03_ai_news.html">← 10/3 のニュース</a><a class="nn all" href="../news.html">📰 ニュース一覧</a><span class="nn off">次の号をおたのしみに🍬</span></nav><script>
+(function () {
+  var art = document.querySelector("article.post");
+  var easy = document.querySelector(".cc-mode .easy");
+  var deep = document.querySelector(".cc-mode .deep");
+  if (!art || !easy || !deep) return;
+  function set(mode) {
+    art.classList.toggle("mode-deep", mode === "deep");
+    art.classList.toggle("mode-easy", mode !== "deep");
+    easy.classList.toggle("on", mode !== "deep");
+    deep.classList.toggle("on", mode === "deep");
+    try { localStorage.setItem("cc_read_mode", mode); } catch (e) {}
+  }
+  easy.addEventListener("click", function () { set("easy"); });
+  deep.addEventListener("click", function () { set("deep"); });
+  var saved = "easy";
+  try { saved = localStorage.getItem("cc_read_mode") || "easy"; } catch (e) {}
+  set(saved === "deep" ? "deep" : "easy");
+})();
+</script>
+
+</div>
+<footer class="site">
+  <p>cybercandy — ルム &amp; ノヴァ ／ 実装・編集: Claude ／ プロデュース: プロデューサー</p>
+</footer>
+</body>
+</html>
